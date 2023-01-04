@@ -30,3 +30,29 @@ class Solution {
     }
     
 }
+
+
+//recursion
+
+class Solution {
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if(root == null){
+            return result;
+        }
+        rightside(root,0,result);
+        return result;
+    }
+    
+    public void rightside(TreeNode root,int level,List<Integer> result){
+        if(root == null){
+            return;
+        }
+        if(level == result.size()){
+            result.add(root.val);
+        }
+        
+        rightside(root.right,level+1,result);
+        rightside(root.left,level+1,result);
+    }
+}
