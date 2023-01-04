@@ -51,3 +51,7 @@ class Node{
         this.column = c;
     }
 }
+
+
+Tc - O(N)
+Sc - O(N)
